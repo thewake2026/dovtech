@@ -1,7 +1,7 @@
 # CHANGE THIS to your GitHub username/repository-name
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  repo: thewake2026/dovtech
   branch: main
 
 media_folder: images/uploads
