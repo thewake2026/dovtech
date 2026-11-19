@@ -1,0 +1,74 @@
+# CHANGE THIS to your GitHub username/repository-name
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME
+  branch: main
+
+media_folder: images/uploads
+public_folder: images/uploads
+
+collections:
+  - name: site
+    label: Website content
+    files:
+      - name: content
+        label: Everything on the site
+        file: content/site.json
+        format: json
+        fields:
+          - label: Contact details
+            name: contact
+            widget: object
+            fields:
+              - { label: WhatsApp number (digits only, with country code), name: whatsapp, widget: string }
+              - { label: Email, name: email, widget: string }
+          - label: Home page top section
+            name: hero
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Short description, name: sub, widget: text }
+          - label: Services
+            name: services
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Name, name: title, widget: string }
+              - label: Animated icon
+                name: icon
+                widget: select
+                options: [sq, ci, ln, gr, ph, rg]
+              - { label: One-line summary, name: summary, widget: text }
+              - { label: Who it is for, name: who, widget: text }
+              - label: What you get
+                name: includes
+                widget: list
+                field: { label: Item, name: item, widget: string }
+          - label: Portfolio projects
+            name: projects
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Link name (lowercase, no spaces, use dashes), name: slug, widget: string }
+              - { label: Category (example, Web app, Website, Product), name: category, widget: string }
+              - { label: Short summary, name: summary, widget: text }
+              - { label: Cover image, name: cover, widget: image, required: false }
+              - { label: The problem, name: problem, widget: text }
+              - { label: What I built, name: solution, widget: text }
+              - { label: Result (optional), name: result, widget: text, required: false }
+              - { label: Live link (optional), name: link, widget: string, required: false }
+              - label: More images
+                name: gallery
+                widget: list
+                required: false
+                fields:
+                  - { label: Image, name: image, widget: image }
+                  - { label: Caption, name: caption, widget: string, required: false }
+          - label: About page
+            name: about
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Your photo, name: photo, widget: image, required: false }
+              - { label: Your story (leave a blank line between paragraphs), name: story, widget: text }

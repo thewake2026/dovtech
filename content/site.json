@@ -1,0 +1,49 @@
+{
+  "contact": { "whatsapp": "2349070572150", "email": "dovtechagency@gmail.com" },
+  "hero": {
+    "headline": "Stop running your business from notebooks and WhatsApp chats.",
+    "sub": "I build simple, working websites and apps for business owners: a place to show your products, take orders, and track everything in one place."
+  },
+  "services": [
+    { "title": "Business websites", "icon": "sq", "summary": "A clean site that shows who you are and what you sell, so people trust you before they message you.",
+      "who": "Business owners who only have Instagram or WhatsApp today and want to look more serious.",
+      "includes": ["Home, about, products and contact pages", "Works well on phones", "Your logo, colours and photos", "A WhatsApp button so customers reach you fast"] },
+    { "title": "Online store and ordering", "icon": "ci", "summary": "Customers see your products, pick what they want, and order without a long back-and-forth chat.",
+      "who": "Sellers of food, fashion, farm produce, or anything people order repeatedly.",
+      "includes": ["Product pages with photos and prices", "A simple cart and order form", "Order details sent to you on WhatsApp", "Payment setup where needed"] },
+    { "title": "Order tracking", "icon": "ln", "summary": "Customers see the status of their order. You update it with one tap.",
+      "who": "Businesses tired of answering “Is my order ready?” all day.",
+      "includes": ["Order numbers for every customer", "Clear stages: received, preparing, on the way, delivered", "One-tap updates for you"] },
+    { "title": "Owner dashboard", "icon": "gr", "summary": "All your orders, customers, and sales in one simple place.",
+      "who": "Owners who want to stop guessing what is selling and who has paid.",
+      "includes": ["One list of every order", "Customer list", "Simple sales totals", "Built to be easy, not complicated"] },
+    { "title": "Mobile apps", "icon": "ph", "summary": "For businesses ready to put their system on their customers’ phones.",
+      "who": "Businesses with repeat customers who would use an app regularly.",
+      "includes": ["Planning what the app should do", "Design and build", "Help with launching"] },
+    { "title": "Design and marketing support", "icon": "rg", "summary": "Logos, social media graphics, and content, so your business looks good while it runs well.",
+      "who": "Businesses that need a consistent look across their website and social pages.",
+      "includes": ["Logo and brand colours", "Social media graphics", "Content ideas and strategy"] }
+  ],
+  "projects": [
+    { "title": "Freelancer CRM", "slug": "freelancer-crm", "category": "Product", "cover": "",
+      "summary": "A system that helps freelancers keep track of clients, projects, and payments in one place.",
+      "problem": "Many freelancers manage clients and payments across chats, notes, and memory, and things get missed.",
+      "solution": "I built a Freelancer CRM that puts clients, projects, and payments in one organised place.",
+      "result": "", "link": "", "gallery": [] },
+    { "title": "Content Creator OS", "slug": "content-creator-os", "category": "Product", "cover": "",
+      "summary": "A system that helps creators plan, organise, and stay consistent with their content.",
+      "problem": "Creators often know what to post but struggle to stay organised and consistent.",
+      "solution": "I built a Content Creator OS that helps creators plan and organise their content in one system.",
+      "result": "", "link": "", "gallery": [] },
+    { "title": "Author Growth HQ", "slug": "author-growth-hq", "category": "Website", "cover": "",
+      "summary": "My website and work with first-time and self-published authors, helping them get clear and get seen.",
+      "problem": "First-time authors often finish a book and then have no clear guidance on publishing and being found.",
+      "solution": "I built Author Growth HQ as a home for clear, practical author guidance and services.",
+      "result": "", "link": "https://authorgrowthhq.com", "gallery": [] }
+  ],
+  "about": {
+    "title": "Hi, I’m Victor.",
+    "photo": "",
+    "story": "I help people and businesses grow, whether that’s building systems for business owners, helping authors reach readers, or building communities.\n\nI care about solving real problems in simple ways, not building complicated things nobody uses. If you can explain your problem to me in plain words, I can build something that fixes it.\n\nDOV TECH is where I do that work."
+  }
+}
