@@ -109,12 +109,12 @@ if(fm){fm.onsubmit=function(e){
   btn.disabled=true;btn.textContent="Sending...";out.textContent="";
   fetch("https://formsubmit.co/ajax/dovtechagency@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
     body:JSON.stringify({name:$("#n").value,email:$("#e").value,business:$("#b").value||"-",message:$("#m").value,_subject:"New project enquiry from "+$("#n").value,_template:"table",_captcha:"false",_honey:$("#h").value})})
-  .then(function(r){return r.json()})
+  .then(function(r){return r.json().then(function(j){return j},function(){return {}})})
   .then(function(j){
     if(j&&(j.success===true||j.success==="true")){fm.reset();out.style.color="#7BEFA6";out.textContent="Thank you. Your message was sent. We will reply by email."}
-    else throw new Error("fail");
+    else{out.style.color="#FFC94D";out.textContent="Sorry, that did not send"+((j&&j.message)?" ("+j.message+")":"")+". Please email us directly at dovtechagency@gmail.com."}
   })
-  .catch(function(){out.style.color="#FFC94D";out.textContent="Sorry, that did not send. Please email us directly at dovtechagency@gmail.com."})
+  .catch(function(){out.style.color="#FFC94D";out.textContent="Sorry, we could not reach the sending service. Please email us directly at dovtechagency@gmail.com."})
   .then(function(){btn.disabled=false;btn.textContent=old});
 }}
 })();
