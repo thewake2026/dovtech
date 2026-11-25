@@ -101,7 +101,20 @@ if(!touch&&!reduce){
 var pb=$(".play");
 if(pb){pb.onclick=function(){var s=pb.parentNode,f=document.createElement("iframe");f.src=pb.dataset.src;f.title=pb.dataset.title;f.loading="lazy";s.appendChild(f);pb.remove()}}
 
-// contact form -> email
+// contact form -> sends to our inbox (no email app needed)
 var fm=$("#f");
-if(fm){fm.onsubmit=function(e){e.preventDefault();var b="Hi DOVTECH AGENCY,%0D%0A%0D%0AMy name: "+encodeURIComponent($("#n").value)+"%0D%0AMy business: "+encodeURIComponent($("#b").value||"-")+"%0D%0A%0D%0A"+encodeURIComponent($("#m").value);location.href="mailto:dovtechagency@gmail.com?subject="+encodeURIComponent("Project enquiry from "+$("#n").value)+"&body="+b}}
+if(fm){fm.onsubmit=function(e){
+  e.preventDefault();
+  var btn=$("button",fm),out=$("#fs"),old=btn.textContent;
+  btn.disabled=true;btn.textContent="Sending...";out.textContent="";
+  fetch("https://formsubmit.co/ajax/dovtechagency@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify({name:$("#n").value,email:$("#e").value,business:$("#b").value||"-",message:$("#m").value,_subject:"New project enquiry from "+$("#n").value,_template:"table",_captcha:"false",_honey:$("#h").value})})
+  .then(function(r){return r.json()})
+  .then(function(j){
+    if(j&&(j.success===true||j.success==="true")){fm.reset();out.style.color="#7BEFA6";out.textContent="Thank you. Your message was sent. We will reply by email."}
+    else throw new Error("fail");
+  })
+  .catch(function(){out.style.color="#FFC94D";out.textContent="Sorry, that did not send. Please email us directly at dovtechagency@gmail.com."})
+  .then(function(){btn.disabled=false;btn.textContent=old});
+}}
 })();
